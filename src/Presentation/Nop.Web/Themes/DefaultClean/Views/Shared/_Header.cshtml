@@ -1,0 +1,214 @@
+﻿@model SearchBoxModel
+
+@using Nop.Core.Domain.Media
+
+@inject MediaSettings mediaSettings
+
+@{
+    Layout = "Head";
+}
+
+
+    <div class="hyper-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div class="left">
+                        <div class="header-phone">
+                            <div class="icon">
+                                <img src="../Themes/DefaultClean/Content/images/phone-call.png" />
+                            </div>
+                            "(+84)-981590488"
+                        </div>
+                        <div class="exchage-rate">
+                            1 JPY = 168,67 VNĐ
+                        </div>
+                    </div>
+                    <div class="right">
+                        <span class="ninja">
+                            <img src="../Themes/DefaultClean/Content/images/chua_login.png" />
+                        </span>
+                        <a class="header-register">Đăng ký</a>/
+                        <a class="header-register">Đăng nhập</a>
+                        <span class="national-flag">
+                            <img src="../Themes/DefaultClean/Content/images/co_vn.png"/>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-toolbar">
+            <div class="container">
+                <div class="justify-content-between d-flex">
+                    <div class="header-toolbar-left">
+                        <a class="header-logo">
+                            <img src="../Themes/DefaultClean/Content/images/hyperbuy_nen_trong.png" />
+                        </a>
+                    </div>
+                    <div class="header-toolbar-center">
+                        <div class="search-box">
+                            <div class="search-type">
+                                <div class="select-box">
+                                    <div class="selected">
+                                        <img src="../Themes/DefaultClean/Content/images/ratuken_icon.png"/>
+                                        " Rakuten"
+                                    </div>
+                                    <div class="btn-drop-down">
+                                    <img src="../Themes/DefaultClean/Content/images/icon-drop-down.png" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-input">
+                            <input type="text" id="header-input-product-search" placeholder="Nhập link hoặc tên sản phẩm hoặc hình ảnh" />
+                            </div>
+                            <div class="search-button-submit" id="header-btn-product-search">
+                                <img src="../Themes/DefaultClean/Content/images/search-1.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-toolbar-right">
+                        <div class="header-toolbar-item">
+                            <a href="#">
+                                <img class="icon-tools" src="../Themes/DefaultClean/Content/images/link.png"/>
+                            </a>
+                        </div>
+                        <div class="header-toolbar-item disabled">
+                            <a href="#">
+                                <img class="icon-tools" src="../Themes/DefaultClean/Content/images/auction.png" />
+                            </a>
+                        </div>
+                        <div class="header-toolbar-item disabled">
+                            <a href="#">
+                                <img class="icon-tools" src="../Themes/DefaultClean/Content/images/notification.png" />
+                            </a>
+                        </div>
+                        <div class="header-toolbar-item">
+                            <a href="#">
+                                <img class="icon-tools" src="../Themes/DefaultClean/Content/images/cart-3.png "/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="container">
+                <div class="d-flex justify-content-around header-menu-wrap">
+                    <div class="menu-item">
+                        <div class="menu-item-name">
+                            <div class="menu-icon">
+                                <img src="../Themes/DefaultClean/Content/images/nui-phu-sy.png"/>
+                            </div>
+                            <div class="menu-item-title">Auction</div>
+                        </div>
+                        <div class="header-menu-popup">
+                            <div class="header-menu-popup--col category">
+                                <div class="category-title">Danh mục sản phẩm</div>
+                                <div class="categories">
+                                    <a>Sưu tập đồ cổ</a>
+                                    <a>Đồng hồ & Phụ kiện</a>
+                                    <a>Điện tử & Thiết bị số</a>
+                                    <a>Nhà cửa & Đời sống</a>
+                                    <a>Thể thao & Giải trí</a>
+                                    <a>Thời trang</a>
+                                    <a>Sức khỏe & Làm đẹp</a>
+                                    <a>Mẹ & Bé</a>
+                                    <a>Văn hóa phẩm</a>
+                                    <a>Tiêu dùng thực phẩm</a>
+                                </div>
+                            </div>
+                            <div class="header-menu-popup--col detail flex-grow-1">
+                                <a>
+                                    <img src="../Themes/DefaultClean/Content/images/auction_banner.png"/>
+                                </a>
+                                <a>
+                                <img src="../Themes/DefaultClean/Content/images/auction_banner_2.png" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">
+                            <div class="menu-icon">
+                                <img src="../Themes/DefaultClean/Content/images/nui-phu-sy.png" />
+                            </div>
+                            <div class="menu-item-title">Order</div>
+                        </div>
+                        <div class="header-menu-popup">
+                            <div class="header-menu-popup--col category flex-grow-1">
+                                <div class="category-title">Danh mục sản phẩm</div>
+                                <div class="categories">
+                                    <a>Sưu tập đồ cổ</a>
+                                    <a>Đồng hồ & Phụ kiện</a>
+                                    <a>Điện tử & Thiết bị số</a>
+                                    <a>Nhà cửa & Đời sống</a>
+                                    <a>Thể thao & Giải trí</a>
+                                    <a>Thời trang</a>
+                                    <a>Sức khỏe & Làm đẹp</a>
+                                    <a>Mẹ & Bé</a>
+                                    <a>Văn hóa phẩm</a>
+                                    <a>Tiêu dùng thực phẩm</a>
+                                </div>
+                            </div>
+                        <div class="header-menu-popup--col category category-brand flex-grow-1">
+                            <div class="category-title">Thương hiệu</div>
+                                <div class="categories">
+                                    <a>
+                                        <img class="brand-icon" src="../Themes/DefaultClean/Content/images/yahoo_shopping_icon.png" />
+                                    " Yahoo! Shopping"
+                                    </a>
+                                     <a>
+                                        <img class="brand-icon" src="../Themes/DefaultClean/Content/images/ratuken_icon.png" />
+                                        " Ratuken"
+                                    </a>
+                                    <a>
+                                        <img class="brand-icon" src="../Themes/DefaultClean/Content/images/mercari_icon.png" />
+                                        " Mercari"
+                                    <a>
+                                        <img class="brand-icon" src="../Themes/DefaultClean/Content/images/amazon_jp_icon.png" />
+                                        "  Amazon JP"
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="header-menu-popup--col category category-brand flex-grow-1">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">
+                            <div class="menu-icon">
+                                <img src="../Themes/DefaultClean/Content/images/nui-phu-sy.png"/>
+                            </div>
+                            <div class="menu-item-title">Auction</div>
+                        </div>
+                        <div class="header-menu-popup">
+                            <div class="header-menu-popup--col category">
+                                <div class="category-title">Danh mục sản phẩm</div>
+                                <div class="categories">
+                                    <a>Sưu tập đồ cổ</a>
+                                    <a>Đồng hồ & Phụ kiện</a>
+                                    <a>Điện tử & Thiết bị số</a>
+                                    <a>Nhà cửa & Đời sống</a>
+                                    <a>Thể thao & Giải trí</a>
+                                    <a>Thời trang</a>
+                                    <a>Sức khỏe & Làm đẹp</a>
+                                    <a>Mẹ & Bé</a>
+                                    <a>Văn hóa phẩm</a>
+                                    <a>Tiêu dùng thực phẩm</a>
+                                </div>
+                            </div>
+                            <div class="header-menu-popup--col detail flex-grow-1">
+                                <a>
+                                    <img src="../Themes/DefaultClean/Content/images/auction_banner.png"/>
+                                </a>
+                                <a>
+                                <img src="../Themes/DefaultClean/Content/images/auction_banner_2.png" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
