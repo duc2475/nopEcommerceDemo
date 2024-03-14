@@ -65,6 +65,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Plugins\DiscountRules.CustomerRoles\" />
+    <Folder Include="Plugins\ExchangeRate.EcbExchange\" />
+    <Folder Include="Plugins\ExternalAuth.Facebook\" />
+    <Folder Include="Plugins\Misc.Brevo\" />
+    <Folder Include="Plugins\Misc.NopMobileApp\" />
+    <Folder Include="Plugins\Misc.WebApi.Frontend\" />
+    <Folder Include="Plugins\Misc.Zettle\" />
+    <Folder Include="Plugins\MultiFactorAuth.GoogleAuthenticator\" />
+    <Folder Include="Plugins\Payments.CheckMoneyOrder\" />
+    <Folder Include="Plugins\Payments.Manual\" />
+    <Folder Include="Plugins\Payments.PayPalCommerce\" />
+    <Folder Include="Plugins\Pickup.PickupInStore\" />
+    <Folder Include="Plugins\Shipping.FixedByWeightByTotal\" />
+    <Folder Include="Plugins\Shipping.UPS\" />
+    <Folder Include="Plugins\Tax.Avalara\" />
+    <Folder Include="Plugins\Tax.FixedOrByCountryStateZip\" />
+    <Folder Include="Plugins\Widgets.FacebookPixel\" />
+    <Folder Include="Plugins\Widgets.GoogleAnalytics\" />
+    <Folder Include="Plugins\Widgets.NivoSlider\" />
+    <Folder Include="Plugins\Widgets.What3words\" />
     <Folder Include="Themes\DefaultClean\Views\Shared\Components\" />
   </ItemGroup>
 

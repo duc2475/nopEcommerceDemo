@@ -6,16 +6,19 @@
 @{ await Html.RenderPartialAsync("_JavaScriptDisabledWarning"); }
 <div class="master-wrapper-page">
     @await Component.InvokeAsync(typeof(AdminHeaderLinksViewComponent))
-    @{ await Html.RenderPartialAsync("_Header"); }
+    @*phần này tắt header mặc định của Nop*@
+    @* @{ await Html.RenderPartialAsync("_Header"); } *@
+    @{await Html.RenderPartialAsync("_HyperBuyHeader");}
     <script asp-location="Footer">
         var localized_data = {
             AjaxCartFailure: "@T("AjaxCart.Failure")"
         };
         AjaxCart.init(false, '.header-links .cart-qty', '.header-links .wishlist-qty', '#flyout-cart', localized_data);
     </script>
-    <div class="header-menu">
+    @* phần này tắt header mặc định của Nop  *@
+   @*  <div class="header-menu">
         @await Component.InvokeAsync(typeof(TopMenuViewComponent))
-    </div>
+    </div> *@
     <div class="master-wrapper-content" id="main" role="main">
         @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.ContentBefore })
 
