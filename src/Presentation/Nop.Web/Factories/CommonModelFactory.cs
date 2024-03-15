@@ -26,6 +26,7 @@ using Nop.Services.Security;
 using Nop.Services.Seo;
 using Nop.Services.Themes;
 using Nop.Services.Topics;
+using Nop.Services.Discounts;
 using Nop.Web.Framework.Themes;
 using Nop.Web.Framework.UI;
 using Nop.Web.Infrastructure.Cache;
@@ -49,6 +50,7 @@ public partial class CommonModelFactory : ICommonModelFactory
     protected readonly ForumSettings _forumSettings;
     protected readonly ICurrencyService _currencyService;
     protected readonly ICustomerService _customerService;
+    protected readonly IDiscountService _discountService;
     protected readonly IForumService _forumService;
     protected readonly IGenericAttributeService _genericAttributeService;
     protected readonly IHttpContextAccessor _httpContextAccessor;
@@ -89,6 +91,7 @@ public partial class CommonModelFactory : ICommonModelFactory
         ForumSettings forumSettings,
         ICurrencyService currencyService,
         ICustomerService customerService,
+        IDiscountService discountService,
         IForumService forumService,
         IGenericAttributeService genericAttributeService,
         IHttpContextAccessor httpContextAccessor,
@@ -121,6 +124,7 @@ public partial class CommonModelFactory : ICommonModelFactory
         _catalogSettings = catalogSettings;
         _commonSettings = commonSettings;
         _customerSettings = customerSettings;
+        _discountService = discountService;
         _displayDefaultFooterItemSettings = displayDefaultFooterItemSettings;
         _forumSettings = forumSettings;
         _currencyService = currencyService;
@@ -291,6 +295,19 @@ public partial class CommonModelFactory : ICommonModelFactory
             AvailableCurrencies = availableCurrencies
         };
 
+        return model;
+    }
+
+    public virtual async Task<CountDowntModel> PrepareCountDownModelAsync()
+    {
+        var store = await _storeContext.GetCurrentStoreAsync();
+        var discounts = await _discountService.GetAllDiscountsAsync();
+        if (discounts.Count == 0 || discounts.FirstOrDefault(x => x.Name == "flash sale") == null)
+            return null;
+        var model = new CountDowntModel
+        {
+            DateTime =  discounts.FirstOrDefault(x => x.Name == "flash sale").EndDateUtc,
+        };
         return model;
     }
 

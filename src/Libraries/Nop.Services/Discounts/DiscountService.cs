@@ -193,8 +193,8 @@ public partial class DiscountService : IDiscountService
             {
                 if (!showHidden)
                     query = query.Where(discount =>
-                        (!discount.StartDateUtc.HasValue || discount.StartDateUtc <= DateTime.UtcNow) &&
-                        (!discount.EndDateUtc.HasValue || discount.EndDateUtc >= DateTime.UtcNow));
+                        (!discount.StartDateUtc.HasValue || discount.StartDateUtc <= DateTime.Now) &&
+                        (!discount.EndDateUtc.HasValue || discount.EndDateUtc >= DateTime.Now));
 
                 //filter by coupon code
                 if (!string.IsNullOrEmpty(couponCode))

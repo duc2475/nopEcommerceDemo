@@ -1,0 +1,9 @@
+﻿@model CountDowntModel;
+@{
+    var CountDown = (Model.DateTime - DateTime.Now);
+}
+<div class="time-down-wrap">
+    <div class="time-down-item" id="hours-box">@Convert.ToInt32(CountDown.Value.TotalHours)</div> : 
+    <div class="time-down-item" id="hours-box">@CountDown.Value.Minutes</div> : 
+    <div class="time-down-item" id="hours-box">@CountDown.Value.Seconds</div>
+</div>

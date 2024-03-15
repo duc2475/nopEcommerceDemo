@@ -162,6 +162,8 @@ public partial class CommonController : BasePublicController
         return Redirect(returnUrl);
     }
 
+
+
     //available even when navigation is not allowed
     [CheckAccessPublicStore(ignore: true)]
     public virtual async Task<IActionResult> SetTaxType(int customerTaxType, string returnUrl = "")

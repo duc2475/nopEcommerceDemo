@@ -85,7 +85,10 @@
     <Folder Include="Plugins\Widgets.GoogleAnalytics\" />
     <Folder Include="Plugins\Widgets.NivoSlider\" />
     <Folder Include="Plugins\Widgets.What3words\" />
-    <Folder Include="Themes\DefaultClean\Views\Shared\Components\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
   </ItemGroup>
 
   <!-- This target execute after "Build" target.

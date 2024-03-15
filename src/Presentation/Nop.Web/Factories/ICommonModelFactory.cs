@@ -42,6 +42,8 @@ public partial interface ICommonModelFactory
     /// A task that represents the asynchronous operation
     /// The task result contains the ax type selector model
     /// </returns>
+    /// 
+    Task<CountDowntModel> PrepareCountDownModelAsync();
     Task<TaxTypeSelectorModel> PrepareTaxTypeSelectorModelAsync();
 
     /// <summary>
@@ -130,4 +132,6 @@ public partial interface ICommonModelFactory
     /// The task result contains the robots.txt file as string
     /// </returns>
     Task<string> PrepareRobotsTextFileAsync();
+
+
 }

@@ -9202,3 +9202,49 @@ hyper-buy-header .header-top .right .national-flag img{
     width: 80% !important;
     margin-top: 40px;
 }
+.homepage-title-box{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.homepage-title-box img{
+    margin-right:10px;
+    height:50px;
+}
+
+  .homepage-title-box a {
+    font-weight: bold;
+    white-space: nowrap;
+    color: red;
+    font-size: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+
+.time-down-wrap {
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  line-height: 67px;
+  margin-left: 40px;
+  flex-direction: row;
+}
+
+.time-down-wrap .time-down-item {
+    color: #f79e1b;
+    margin: 0 15px;
+    background: #000;
+    display: flex;
+    width: 67px;
+    height: 67px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    font-size: 30px;
+    margin-right: 10px;
+}
