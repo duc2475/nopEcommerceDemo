@@ -1,9 +1,37 @@
 ﻿@model CountDowntModel;
+
 @{
-    var CountDown = (Model.DateTime - DateTime.Now);
+    if (Model == null)
+    {
+                <div class="time-down-wrap">
+                    <div class="time-down-item">0</div> :
+                    <div class="time-down-item">0</div> :
+                    <div class="time-down-item">0</div>
+                </div>
+    }
+    else
+    {
+        var CountDown = (Model.DateTime - DateTime.Now);
+               <script asp-location="Footer">
+                   $(document).ready(function () {
+                        setInterval(function () {
+                            var hours = Math.floor((CountDown) / (1000 * 60 * 60));
+                            var minutes = Math.floor((CountDown % (1000 * 60 * 60)) / (1000 * 60));
+                            var seconds = Math.floor((CountDown % (1000 * 60)) / 1000);
+                            document.getElementById("hours").innerHTML = hours.toString();
+                            document.getElementById("minutes").innerHTML = minutes.toString();
+                            document.getElementById("seconds").innerHTML = seconds.toString();
+                        }, 1000);
+                   });
+                </script>
+                <div class="time-down-wrap">
+                    <div class="time-down-item" id="hours"></div> :
+                    <div class="time-down-item" id="minutes"></div> :
+                    <div class="time-down-item" id="seconds"></div>
+                </div>
+        
+    }
 }
-<div class="time-down-wrap">
-    <div class="time-down-item" id="hours-box">@Convert.ToInt32(CountDown.Value.TotalHours)</div> : 
-    <div class="time-down-item" id="hours-box">@CountDown.Value.Minutes</div> : 
-    <div class="time-down-item" id="hours-box">@CountDown.Value.Seconds</div>
-</div>
+
+
+

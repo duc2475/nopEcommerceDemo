@@ -47,6 +47,8 @@ public partial interface IProductService
     /// A task that represents the asynchronous operation
     /// The task result contains the list of featured products
     /// </returns>
+    /// 
+    Task<IList<Product>> GetAllProductsDiscountToDisplayOnHomepageAsync();
     Task<IList<Product>> GetCategoryFeaturedProductsAsync(int categoryId, int storeId = 0);
 
     /// <summary>

@@ -10,7 +10,7 @@
 
 <div class="homepage-wrap">
     <div class="container">
-        @* @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageTop }) *@
+        @await Html.PartialAsync("~/Themes/DefaultClean/Views/Shared/HomepageSlider/HompageSlider.cshtml")
     </div>
 
     <div class="container mb-4">
@@ -19,18 +19,26 @@
             <a href="#">Flash Sale</a>
             @await Component.InvokeAsync(typeof(HomepageCountDownFSViewComponent))
         </div>
+        @await Component.InvokeAsync(typeof(HyperHomepageProductViewComponent))
+        <div class="d-flex justify-content-end mb-5">
+            <a href="#" class="btn btn-danger" style="width: 150px; border-radius:40px">Xem thêm
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" class="bi bi-arrow-right-short pt-1" viewBox="0 0 13 13">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                </svg>
+            </a>
+        </div>
+        @await Html.PartialAsync("~/Themes/DefaultClean/Views/Shared/HomepageBannerSlider/HomepageBannerSlider.cshtml")
     </div>
-
-       @*  @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeCategories })
-        @await Component.InvokeAsync(typeof(HomepageCategoriesViewComponent))
-        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeProducts })
+    @await Html.PartialAsync("~/Themes/DefaultClean/Views/Shared/HomepageLogoBox/HomepageLogoBox.cshtml")
+   <div class="container mb-4">
         @await Component.InvokeAsync(typeof(HomepageProductsViewComponent))
-        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeBestSellers })
-        @await Component.InvokeAsync(typeof(HomepageBestSellersViewComponent))
-        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeNews })
-        @await Component.InvokeAsync(typeof(HomepageNewsViewComponent))
-        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforePoll })
-        @await Component.InvokeAsync(typeof(HomepagePollsViewComponent))
-        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBottom })
-     *@
+        <div class="d-flex justify-content-end">
+            <a href="#" class="btn btn-danger" style="width: 150px; border-radius:40px">
+                Xem thêm
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" class="bi bi-arrow-right-short pt-1" viewBox="0 0 13 13">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                </svg>
+            </a>
+        </div>
+   </div>
 </div>

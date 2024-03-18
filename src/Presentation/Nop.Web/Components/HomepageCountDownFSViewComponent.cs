@@ -18,7 +18,7 @@ public class HomepageCountDownFSViewComponent: NopViewComponent
     {
         var model = await _commonModelFactory.PrepareCountDownModelAsync();
         if (model == null)
-            return View("");
+            return View(model);
         return View(model);
     }
 }

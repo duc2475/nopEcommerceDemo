@@ -25,8 +25,8 @@
     var addtowishlistlink = Url.RouteUrl("AddProductToCart-Catalog", new { productId = Model.Id, shoppingCartTypeId = (int)ShoppingCartType.Wishlist, quantity = quantity });
     var addtocomparelink = Url.RouteUrl("AddProductToCompare", new { productId = Model.Id });
 }
-<div class="product-item" data-productid="@Model.Id">
-    <div class="picture">
+<div class="product-item mt-2" data-productid="@Model.Id" style="max-width: 288px !important">
+    <div class="picture" style="max-width: 288px !important">
         @if (Model.PictureModels.Count > 1)
         {
             <div class="swiper" id="swiper-@Model.Id" dir="@Html.GetUIDirection(!await Html.ShouldUseRtlThemeAsync())">
@@ -59,9 +59,9 @@
             </a>
         }
     </div>
-    <div class="details">
+    <div class="details mb-4">
         <h2 class="product-title">
-            <a href="@(Url.RouteUrl<Product>(new {SeName = Model.SeName }))">@Model.Name</a>
+            <a href="@(Url.RouteUrl<Product>(new {SeName = Model.SeName }))" style="text-decoration: none; color: #000">@(Model.Name.Length > 25 ? Model.Name.Substring(0, 25) + " ....." : Model.Name)</a>
         </h2>
         @if (catalogSettings.ShowSkuOnCatalogPages && !string.IsNullOrEmpty(Model.Sku))
         {
@@ -93,7 +93,7 @@
                 {
                     <span class="price old-price">@Model.ProductPrice.OldPrice</span>
                 }
-                <span class="price actual-price">@Model.ProductPrice.Price</span>
+                <span class="price actual-price" style="color: red; font-weight: 900;">@Model.ProductPrice.Price</span>
                 @if (Model.ProductPrice.DisplayTaxShippingInfo)
                 {
                     var inclTax = await workContext.GetTaxDisplayTypeAsync() == TaxDisplayType.IncludingTax;
@@ -111,7 +111,7 @@
                 }
             </div>
             @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.ProductBoxAddinfoMiddle, additionalData = Model })
-            <div class="buttons">
+            @* <div class="buttons" style="max-width:288px">
                 @if (!Model.ProductPrice.DisableBuyButton)
                 {
                     var addToCartText = T("ShoppingCart.AddToCart").Text;
@@ -133,7 +133,7 @@
                 {
                     <button type="button" class="button-2 add-to-wishlist-button" title="@T("ShoppingCart.AddToWishlist")" onclick="AjaxCart.addproducttocart_catalog('@addtowishlistlink');return false;">@T("ShoppingCart.AddToWishlist")</button>
                 }
-            </div>
+            </div> *@
             @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.ProductBoxAddinfoAfter, additionalData = Model })
         </div>
     </div>
