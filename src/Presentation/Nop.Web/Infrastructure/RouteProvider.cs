@@ -193,6 +193,11 @@ public partial class RouteProvider : BaseRouteProvider, IRouteProvider
             pattern: $"compareproducts/add/{{productId:min(0)}}",
             defaults: new { controller = "Product", action = "AddProductToCompareList" });
 
+        //list all product with the fillter
+        endpointRouteBuilder.MapControllerRoute(name: "AllProductList",
+            pattern: $"san-pham/danh-sach-san-pham",
+            defaults: new { controller = "Product", action = "AllProductList" });
+
         //product email a friend
         endpointRouteBuilder.MapControllerRoute(name: "ProductEmailAFriend",
             pattern: $"{lang}/productemailafriend/{{productId:min(0)}}",

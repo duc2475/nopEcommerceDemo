@@ -512,6 +512,18 @@ public partial class ProductController : BasePublicController
         return View(model);
     }
 
+    public virtual async Task<IActionResult> AllProductList(int? categoryId, string? productSortType, string? priceSortType)
+    {
+        var products = await _productService.GetAllProductAvailable().Result.ToListAsync();
+        if (categoryId!= null)
+        {
+            
+        }
+        var model = new List<ProductOverviewModel>();
+        model.AddRange(await _productModelFactory.PrepareProductOverviewModelsAsync(products));
+        return View(model);
+    }
+
     #endregion
 
     #region Email a friend

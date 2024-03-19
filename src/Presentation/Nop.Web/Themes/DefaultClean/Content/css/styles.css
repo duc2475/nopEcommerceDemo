@@ -9282,3 +9282,161 @@ hyper-buy-header .header-top .right .national-flag img{
 .homepage-order-type-box .logo-box img {
     height: 100%;
 }
+
+.hyper-buy-footer {
+  border-top: 3px solid #999;
+}
+
+.hyper-buy-footer .top .container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.hyper-buy-footer .top .top-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.hyper-buy-footer .top .top-logo .logo-box {
+    height: 33px;
+    margin: 5px 33px;
+}
+
+.hyper-buy-footer .top .top-logo .logo-box img {
+    height: 100%;
+}
+
+.hyper-buy-footer .top .top-logo--right {
+    border-left: 2px solid #999;
+}
+
+.hyper-buy-footer .middle {
+    padding: 42px 0 37px 0;
+    display: flex;
+    background: #d9d9d9;
+    border-top: 3px solid #999;
+}
+.hyper-buy-footer .middle .footer-column--contact {
+    width: 30%;
+}
+
+.footer-column--customer-service{
+    width: 20% !important;
+}
+.footer-column--about {
+  width: 20% !important;
+}
+.hyper-buy-footer .middle .footer-column .footer-column-title {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 27px;
+  color: #515151;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.hyper-buy-footer .middle .footer-column--contact .logo img {
+    width: 280px;
+}
+
+.hyper-buy-footer .middle .footer-column .line {
+    color: #777;
+    display: flex;
+    font-size: 18px;
+    font-weight: 650;
+}
+.hyper-buy-footer .middle .footer-column .line .icon {
+    margin-right: 20px;
+}
+.hyper-buy-footer .middle .footer-column .line .icon img {
+    width: 30px;
+}
+.hyper-buy-footer .middle .footer-column {
+    width: 30%;
+    padding-right: 15px;
+}
+
+.hyper-buy-footer .middle .footer-column .footer-column-title {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    color: #515151;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.hyper-buy-footer .middle .footer-column:last-child {
+    padding-right: 0;
+}
+
+.hyper-buy-footer .middle .footer-column--social {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.hyper-buy-footer .middle .footer-column--social .register-for-notifications-box {
+    border-radius: 6px;
+    background: #af272e;
+    padding: 22px 28px;
+    width: 100%;
+    margin-bottom: 36px;
+}
+.hyper-buy-footer .middle .footer-column--social .register-for-notifications-box .footer-column-title {
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    height: auto;
+}
+
+.hyper-buy-footer .middle .footer-column--social .register-for-notifications-box .input-box {
+    background: #fff;
+    border-radius: 4px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 3px 5px 3px 15px;
+    --btn-submit-width: 50px;
+}
+
+.hyper-buy-footer .middle .footer-column--social .register-for-notifications-box .input-box .footer-register-input {
+    border: 0;
+    outline: none;
+    width: 90%;
+    font-size: 14px;
+}
+
+.hyper-buy-footer .middle .footer-column--social .register-for-notifications-box .input-box .button-submit {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #b9b9b9;
+    cursor: pointer;
+}
+.hyper-buy-footer .middle .footer-column--social .register-for-notifications-box .input-box .button-submit img {
+    align-content: end;
+    width: 20px;
+}
+
+.follow-us-title {
+    text-align: center;
+}
+
+.hyper-buy-footer .bottom {
+  height: 68px;
+  background: #797979;
+  display: flex;
+  align-items: center;
+}
+
+.hyper-buy-footer .bottom .copyright {
+    color: #d9d9d9;
+    font-weight: 500;
+    font-size: 18px;
+}

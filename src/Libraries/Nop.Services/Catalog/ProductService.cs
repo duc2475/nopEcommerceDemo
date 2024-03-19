@@ -580,6 +580,18 @@ public partial class ProductService : IProductService
         return products;
     }
 
+    public virtual async Task<IList<Product>> GetAllProductAvailable()
+    {
+        var product = await _productRepository.GetAllAsync(query =>
+        {
+            return from p in query
+                   orderby p.Id
+                   where p.Published && !p.Deleted
+                   select p;
+        }, cache => cache.PrepareKeyForDefaultCache(NopCatalogDefaults.ProductsHomepageCacheKey));
+        return product;
+    }
+
     public virtual async Task<IList<Product>> GetAllProductsDiscountToDisplayOnHomepageAsync()
     {
         var pdiscount = await _discountProductMappingRepository.GetAllAsync(query =>

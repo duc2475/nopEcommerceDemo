@@ -1,0 +1,157 @@
+﻿@model FooterModel
+
+@using Nop.Core
+@using Nop.Core.Domain.Tax
+@using Nop.Core.Domain.Topics
+
+@inject IWorkContext workContext
+
+<div class="hyper-buy-footer">
+    <div class="top">
+        <div class="container">
+            <div class="top-logo top-logo--left">
+                <div class="logo-box">
+                    <img src="../Themes/DefaultClean/Content/images/og_image_logo.png" />
+                </div>
+                <div class="logo-box">
+                    <img src="../Themes/DefaultClean/Content/images/Yahoo!_Japan.png" />
+                </div>
+                <div class="logo-box">
+                    <img src="../Themes/DefaultClean/Content/images/mercari.png" />
+                </div>
+                <div class="logo-box">
+                    <img src="../Themes/DefaultClean/Content/images/amazonjapan.png" />
+                </div>
+            </div>
+            <div class="top-logo top-logo--right">
+                <div class="logo-box">
+                    <img src="../Themes/DefaultClean/Content/images/Visa_Inc._logo.png" />
+                </div>
+                <div class="logo-box">
+                    <img src="../Themes/DefaultClean/Content/images/master-card.png" />
+                </div>
+                <div class="logo-box">
+                    <img src="../Themes/DefaultClean/Content/images/PayPal.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="container">
+            <div class="d-flex footer-middle-columns">
+                <div class="footer-column footer-column--contact">
+                    <div class="logo footer-column-title">
+                        <img src="../Themes/DefaultClean/Content/images/hyperbuy_nen_trong.png" />
+                    </div>
+                    <div class="line mb-3">
+                        <div class="icon">
+                            <img src="../Themes/DefaultClean/Content/images/phone-call.png" />
+                        </div>
+                        Hotline: (+84) - 981590488
+                    </div>
+                    <div class="line mb-3">
+                        <div class="icon">
+                            <img src="../Themes/DefaultClean/Content/images/mail.png" />
+                        </div>
+                        Email: info&#64;hyperbuy.vn
+                    </div>
+                    <div class="line mb-3">
+                        <div class="icon">
+                            <img src="../Themes/DefaultClean/Content/images/pin.png" />
+                        </div>
+                        Địa chỉ: 85 Nguyễn Khang, Yên Hoà, Cầu Giấy, Hà Nội
+                    </div>
+                </div>
+                <div class="footer-column footer-column--customer-service">
+                    <div class="footer-column-title">
+                        Hỗ trợ khách hàng
+                    </div>
+                    <div class="line">
+                        <a>Hỗ trợ khách hàng</a>
+                    </div>
+                    <div class="line">
+                        <a>Hướng dẫn đấu giá</a>
+                    </div>
+                    <div class="line">
+                        <a>Hỗ trợ khách hàng</a>
+                    </div>
+                    <div class="line">
+                        <a>Biểu phí thanh toán</a>
+                    </div>
+                    <div class="line">
+                        <a>Giao nhận & Vận chuyển</a>
+                    </div>
+                    <div class="line">
+                        <a>Điều khoản & Chính sách</a>
+                    </div>
+                </div>
+                <div class="footer-column footer-column--about">
+                    <div class="footer-column-title">
+                        Về HYPERBUY
+                    </div>
+                    <div class="line"><a>Giới thiệu HYPERBUY</a></div>
+                    <div class="line"><a>Thông tin liên hệ</a></div>
+                    <div class="line"><a>Chính sách bảo mật</a></div>
+                    <div class="line"><a>Điều kiện & Điều khoản</a></div>
+                    <div class="line"><a>Quy chế hoạt động</a></div>
+                </div>
+                <div class="footer-column footer-column--social">
+                    <div class="register-for-notifications-box">
+                        <div class="footer-column-title">
+                            Đăng ký nhận bản tin Hyperbuy
+                        </div>
+                        <div class="input-box">
+                            <input class="footer-register-input" placeholder="Email" />
+                            <div class="button-submit">
+                                <img src="../Themes/DefaultClean/Content/images/send.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="follow-us">
+                        <div class="follow-us-title mb-2" style="color: #777; font-weight: 500">
+                            Theo dõi chúng tôi
+                        </div>
+                        <div class="social">
+                            @await Component.InvokeAsync(typeof(SocialButtonsViewComponent))
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="container">
+            <div class="copyright">©2023 HYPERBUY |</div>
+        </div>
+    </div>
+</div>
+<script asp-location="Footer">
+    $(document).ready(function () {
+        $('.footer-block .title').on('click', function () {
+            var e = window, a = 'inner';
+            if (!('innerWidth' in window)) {
+                a = 'client';
+                e = document.documentElement || document.body;
+            }
+            var result = { width: e[a + 'Width'], height: e[a + 'Height'] };
+            if (result.width < 769) {
+                $(this).siblings('.list').slideToggle('slow');
+            }
+        });
+    });
+</script>
+<script asp-location="Footer">
+    $(document).ready(function () {
+        $('.block .title').on('click', function () {
+            var e = window, a = 'inner';
+            if (!('innerWidth' in window)) {
+                a = 'client';
+                e = document.documentElement || document.body;
+            }
+            var result = { width: e[a + 'Width'], height: e[a + 'Height'] };
+            if (result.width < 1001) {
+                $(this).siblings('.listbox').slideToggle('slow');
+            }
+        });
+    });
+</script>

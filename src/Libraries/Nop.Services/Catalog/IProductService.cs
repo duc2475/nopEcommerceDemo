@@ -48,7 +48,10 @@ public partial interface IProductService
     /// The task result contains the list of featured products
     /// </returns>
     /// 
+
+    ///Custom place
     Task<IList<Product>> GetAllProductsDiscountToDisplayOnHomepageAsync();
+    Task<IList<Product>> GetAllProductAvailable();
     Task<IList<Product>> GetCategoryFeaturedProductsAsync(int categoryId, int storeId = 0);
 
     /// <summary>
