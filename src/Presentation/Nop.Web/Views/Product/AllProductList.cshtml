@@ -1,23 +1,97 @@
-﻿@model IList<ProductOverviewModel>
+﻿@model IList<CategoryModel>
+@using Nop.Core.Domain.Catalog
+@using Nop.Core.Domain.Common
+@using Nop.Core.Domain.Seo
+
+@inject Nop.Core.IWebHelper webHelper
+@inject SeoSettings seoSettings
+@inject CommonSettings commonSettings
 
 @{
     Layout = "_ColumnsTwo";
+    NopHtml.AddTitleParts("All Product");
+    var breadcrumbDelimiter = commonSettings.BreadcrumbDelimiter;
 }
-<div class="page recently-viewed-products-page">
-    
+
+@section Breadcrumb{
+    <div class="breadcrumb">
+        <ul> 
+            <li>
+                <a href="@Url.RouteUrl("Homepage")">Home</a>
+                <span class="delimiter">@breadcrumbDelimiter</span>
+            </li>
+            <li>
+                <strong href="danh-sach-san-pham" class="current-item">All</strong>
+            </li>
+        </ul>
+    </div>
+}
+
+
+<div class="page category-page">
+    <div class="page-title">
+        <h1>All</h1>
+    </div>
     <div class="page-body">
         @if (Model.Count > 0)
         {
-            <div class="product-grid">
+            <div class="category-grid sub-category-grid">
                 <div class="item-grid">
-                    @foreach (var product in Model)
+                    @foreach(var categoryModel in Model)
                     {
-                        <div class="item-box" style="max-width: 288px !important; box-shadow: 0 0 4px 1px #ddd; border-radius: 10px">
-                            @await Html.PartialAsync("_ProductBox", product)
+                        <div class="item-box">
+                            <div class="sub-category-item">
+                                <h2 class="title">
+                                    <a href="@(Url.RouteUrl<Category>(new { SeName = categoryModel.SeName }))" title="@categoryModel.PictureModel.Title">
+                                        @categoryModel.Name
+                                    </a>
+                                </h2>
+                                @if(categoryModel.PictureModel.Id != 0)
+                                {
+                                    <div class="picture">
+                                        <a href="@(Url.RouteUrl<Category>(new { SeName = categoryModel.SeName }))" title="@categoryModel.PictureModel.Title">
+                                            <img alt="@categoryModel.PictureModel.AlternateText" src="@categoryModel.PictureModel.ImageUrl" title="@categoryModel.PictureModel.Title" />
+                                        </a>
+                                    </div>
+                                }
+                            </div>
                         </div>
                     }
                 </div>
             </div>
+
+            @foreach (var categoryModel in Model)
+            {
+                @if (categoryModel.FeaturedProducts.Count > 0)
+                {
+                    <div class="product-grid featured-product-grid">
+                        <div class="title">
+                            <strong>@T("Products.FeaturedProducts")</strong>
+                        </div>
+                        <div class="item-grid">
+                            @foreach (var item in categoryModel.FeaturedProducts)
+                            {
+                                <div class="item-box">
+                                    @await Html.PartialAsync("_ProductBox", item)
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+                
+            }
         }
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+

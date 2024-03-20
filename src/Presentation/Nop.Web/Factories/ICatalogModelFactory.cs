@@ -41,7 +41,7 @@ public partial interface ICatalogModelFactory
     /// </returns>
     Task<CategoryNavigationModel> PrepareCategoryNavigationModelAsync(int currentCategoryId,
         int currentProductId);
-
+  /*  Task<IList<CategoryNavigationModel>> PrepareCategoriesNavigationModelAsync();*/
     /// <summary>
     /// Prepare top menu model
     /// </summary>

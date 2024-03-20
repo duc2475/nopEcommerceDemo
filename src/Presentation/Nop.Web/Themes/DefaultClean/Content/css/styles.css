@@ -7149,10 +7149,10 @@ label, label + * {
   .item-box:nth-child(2n+1) {
     clear: none;
   }
-
+/*
   .item-box:nth-child(3n+1) {
     clear: both;
-  }
+  }*/
 
   .product-list .item-box {
     float: none;
@@ -9439,4 +9439,58 @@ hyper-buy-header .header-top .right .national-flag img{
     color: #d9d9d9;
     font-weight: 500;
     font-size: 18px;
+}
+
+.nop-jcarousel .carousel-title {
+  margin: 0 0 30px;
+  font-size: 30px;
+  padding: 10px 55px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  position: relative;
+  color: #444;
+}
+.slick-next, .slick-prev {
+  width: 45px;
+  height: 45px;
+}
+
+.slick-prev {
+  left: 0;
+  background-image: url("../images/jcarousel-left.png");
+}
+
+ .slick-next, .slick-prev {
+  position: absolute;
+  top: 0;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  width: 35px;
+  height: 35px;
+  background-color: #f3f3f3;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border: 0;
+  font-size: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slick-next:focus, .slick-prev:focus {
+    outline: none;
+}
+.slick-next {
+  right: 0;
+  background-image: url("../images/jcarousel-right.png");
+}
+
+.product-box {
+  max-width: 288px !important;
+  box-shadow: 0 0 4px 1px #ddd;
+  border-radius: 10px;
 }

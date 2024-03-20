@@ -700,7 +700,7 @@ public partial class ProductService : IProductService
                 where p.Published && !p.Deleted && p.VisibleIndividually &&
                       (!p.AvailableStartDateTimeUtc.HasValue || p.AvailableStartDateTimeUtc.Value < DateTime.UtcNow) &&
                       (!p.AvailableEndDateTimeUtc.HasValue || p.AvailableEndDateTimeUtc.Value > DateTime.UtcNow) &&
-                      pc.IsFeaturedProduct && categoryId == pc.CategoryId
+                     /* pc.IsFeaturedProduct &&*/ categoryId == pc.CategoryId
                 select p;
 
             //apply store mapping constraints

@@ -528,6 +528,20 @@ public partial class CatalogModelFactory : ICatalogModelFactory
         return model;
     }
 
+    //custom area
+   /* public virtual async Task<IList<CategoryNavigationModel>> PrepareCategoriesNavigationModelAsync()
+    {
+        var categories = await _categoryService.GetAllCategoriesDisplayedOnHomepageAsync();
+
+        var model = new List<CategoryNavigationModel>();
+        foreach(var item in categories)
+        {
+            model.Add()
+        }
+
+        return model;
+    }*/
+
     /// <summary>
     /// Prepare top menu model
     /// </summary>
@@ -806,7 +820,9 @@ public partial class CatalogModelFactory : ICatalogModelFactory
         var cacheKey = _staticCacheManager.PrepareKeyForDefaultCache(NopModelCacheDefaults.CategoryAllModelKey,
             language, customerRoleIds, store);
 
-        return await _staticCacheManager.GetAsync(cacheKey, async () => await PrepareCategorySimpleModelsAsync(0));
+        var model = await _staticCacheManager.GetAsync(cacheKey, async () => await PrepareCategorySimpleModelsAsync(0));
+
+        return model;
     }
 
     /// <summary>

@@ -33,6 +33,8 @@ public partial class ProductController : BasePublicController
     protected readonly CaptchaSettings _captchaSettings;
     protected readonly CatalogSettings _catalogSettings;
     protected readonly IAclService _aclService;
+    protected readonly ICategoryService _categoryService;
+    protected readonly ICatalogModelFactory _catalogModelFactory;
     protected readonly ICompareProductsService _compareProductsService;
     protected readonly ICustomerActivityService _customerActivityService;
     protected readonly ICustomerService _customerService;
@@ -66,6 +68,8 @@ public partial class ProductController : BasePublicController
     public ProductController(CaptchaSettings captchaSettings,
         CatalogSettings catalogSettings,
         IAclService aclService,
+        ICatalogModelFactory catalogModelFactory,
+        ICategoryService categoryService,
         ICompareProductsService compareProductsService,
         ICustomerActivityService customerActivityService,
         ICustomerService customerService,
@@ -94,6 +98,8 @@ public partial class ProductController : BasePublicController
     {
         _captchaSettings = captchaSettings;
         _catalogSettings = catalogSettings;
+        _catalogModelFactory = catalogModelFactory;
+        _categoryService = categoryService;
         _aclService = aclService;
         _compareProductsService = compareProductsService;
         _customerActivityService = customerActivityService;
@@ -512,16 +518,15 @@ public partial class ProductController : BasePublicController
         return View(model);
     }
 
-    public virtual async Task<IActionResult> AllProductList(int? categoryId, string? productSortType, string? priceSortType)
+    public virtual async Task<IActionResult> AllProductList(CatalogProductsCommand command)
     {
-        var products = await _productService.GetAllProductAvailable().Result.ToListAsync();
-        if (categoryId!= null)
+        var categories = await _categoryService.GetAllCategoriesAsync().Result.ToListAsync();
+        IList<CategoryModel> categoryModels = new List<CategoryModel>();
+        foreach(var item in categories)
         {
-            
+            categoryModels.Add(await _catalogModelFactory.PrepareCategoryModelAsync(item,command));
         }
-        var model = new List<ProductOverviewModel>();
-        model.AddRange(await _productModelFactory.PrepareProductOverviewModelsAsync(products));
-        return View(model);
+        return View(categoryModels);
     }
 
     #endregion

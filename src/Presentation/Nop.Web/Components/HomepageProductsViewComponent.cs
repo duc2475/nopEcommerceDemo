@@ -38,8 +38,7 @@ public partial class HomepageProductsViewComponent : NopViewComponent
         if (!products.Any())
             return Content("");
 
-        var model = (await _productModelFactory.PrepareProductOverviewModelsAsync(products, true, true, productThumbPictureSize)).ToList();
-
+        var model = (await _productModelFactory.PrepareProductOverviewModelsAsync(products, true, true, productThumbPictureSize)).ToList().Take(4);
         return View(model);
     }
 }

@@ -195,7 +195,7 @@ public partial class RouteProvider : BaseRouteProvider, IRouteProvider
 
         //list all product with the fillter
         endpointRouteBuilder.MapControllerRoute(name: "AllProductList",
-            pattern: $"san-pham/danh-sach-san-pham",
+            pattern: $"danh-sach-san-pham",
             defaults: new { controller = "Product", action = "AllProductList" });
 
         //product email a friend
