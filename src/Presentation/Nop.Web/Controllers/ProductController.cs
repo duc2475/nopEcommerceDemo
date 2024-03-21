@@ -518,17 +518,6 @@ public partial class ProductController : BasePublicController
         return View(model);
     }
 
-    public virtual async Task<IActionResult> AllProductList(CatalogProductsCommand command)
-    {
-        var categories = await _categoryService.GetAllCategoriesAsync().Result.ToListAsync();
-        IList<CategoryModel> categoryModels = new List<CategoryModel>();
-        foreach(var item in categories)
-        {
-            categoryModels.Add(await _catalogModelFactory.PrepareCategoryModelAsync(item,command));
-        }
-        return View(categoryModels);
-    }
-
     #endregion
 
     #region Email a friend

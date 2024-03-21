@@ -26,10 +26,10 @@
         currentProductId = Convert.ToInt32(Url.ActionContext.RouteData.Values["productId"].ToString());
     }
 }
-
-@await RenderSectionAsync("Breadcrumb", false)
-
 <div class="container">
+    @await RenderSectionAsync("Breadcrumb", false)
+</div>
+<div class="container background-gray">
 
     <div class="side-2">
         @if (IsSectionDefined("left"))
@@ -42,7 +42,7 @@
         else
         {
             @* @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.LeftSideColumnBefore }) *@
-           @*  @await RenderSectionAsync("CatalogFilters", false); *@
+            @* @await RenderSectionAsync("CatalogFilters", false); *@
             IgnoreSection("CatalogFilters");
             @await Component.InvokeAsync(typeof(CategoryNavigationViewComponent), new { currentCategoryId = currentCategoryId, currentProductId = currentProductId })
             @* @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.LeftSideColumnAfterCategoryNavigation }) *@

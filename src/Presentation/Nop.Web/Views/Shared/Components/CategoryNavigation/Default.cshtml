@@ -65,25 +65,25 @@
 
 @if (Model.Categories.Count > 0)
 {
-    <div class="block block-category-navigation">
-        <div class="title">
-            <strong>@T("Categories")</strong>
-        </div>
-        <div class="listbox">
-            <ul class="list">
-                <li class="sublist">
-                    <a href="danh-sach-san-pham">All</a>
-                </li>
-                @foreach (var category in Model.Categories)
-                {
-                    var categoryLineModel = new CategoryNavigationModel.CategoryLineModel
+    <div class="block block-category-navigation background-white">
+        <div style="margin:10px">
+            <div class="title">
+                <strong>@T("Categories")</strong>
+            </div>
+            <div class="listbox">
+                <ul class="list">
+                    @foreach (var category in Model.Categories)
                     {
-                        CurrentCategoryId = Model.CurrentCategoryId,
-                        Category = category
-                    };
-                    await CategoryLine(categoryLineModel);
-                }
-            </ul>
+                        var categoryLineModel = new CategoryNavigationModel.CategoryLineModel
+                        {
+                            CurrentCategoryId = Model.CurrentCategoryId,
+                            Category = category
+                        };
+                        await CategoryLine(categoryLineModel);
+                    }
+                </ul>
+            </div>
         </div>
     </div>
+    
 }

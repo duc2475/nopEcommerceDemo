@@ -147,6 +147,16 @@ public partial class CatalogController : BasePublicController
         return PartialView("_ProductsInGridOrLines", model);
     }
 
+    /*[CheckLanguageSeoCode(ignore: true)]
+    public virtual async Task<IActionResult> GetAllCategoryProducts()
+    {
+        var category = await _categoryService.GetAllCategoriesAsync();
+        foreach(var item in category)
+        {
+
+        }
+    }*/
+
     [HttpPost]
     public virtual async Task<IActionResult> GetCatalogRoot()
     {

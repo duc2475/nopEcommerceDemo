@@ -1533,8 +1533,9 @@ label, label + * {
 .breadcrumb li * {
   display: inline-block;
   margin: 0 5px;
-  font-size: 14px; /*reset zeroing*/
+  font-size: 20px; /*reset zeroing*/
   line-height: 32px;
+  font-weight: 500;
 }
 
 .breadcrumb strong {
@@ -2090,6 +2091,7 @@ label, label + * {
   max-width: 100%;
   max-height: 100%;
   margin: auto;
+  border-radius: 10px;
 }
 
 .picture-gallery .picture-thumbs {
@@ -6803,7 +6805,9 @@ label, label + * {
   }
 
   .block-category-navigation {
-    display: none;
+    display: block;
+    border-radius: 10px;
+    padding: 10px 20px 10px;
   }
 
   .block-account-navigation {
@@ -8278,7 +8282,7 @@ label, label + * {
 
   .gallery {
     float: left;
-    width: 46%;
+    width: 30%;
   }
 
   .picture-gallery .picture {
@@ -8292,7 +8296,7 @@ label, label + * {
 
   .overview {
     float: right;
-    width: 52%;
+    width: 65%;
   }
 
   .rental-attributes {
@@ -9493,4 +9497,23 @@ hyper-buy-header .header-top .right .national-flag img{
   max-width: 288px !important;
   box-shadow: 0 0 4px 1px #ddd;
   border-radius: 10px;
+}
+
+.background-gray {
+  background-color: #e9ecef;
+}
+.background-white {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.listbox .list li {
+    font-weight: 500;
+}
+
+.title-description {
+  border-bottom: 1px solid #777;
+  font-size: 30px;
+  font-weight: 500;
+  color: red;
 }

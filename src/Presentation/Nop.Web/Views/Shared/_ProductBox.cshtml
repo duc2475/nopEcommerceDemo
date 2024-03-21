@@ -55,7 +55,7 @@
         {
             var picture = Model.PictureModels.FirstOrDefault();
             <a href="@(Url.RouteUrl<Product>(new { SeName = Model.SeName }))" title="@picture?.Title">
-                <img alt="@picture?.AlternateText" src="@picture?.ImageUrl" title="@picture?.Title" />
+                <img alt="@picture?.AlternateText" src="@picture?.ImageUrl" title="@picture?.Title"/>
             </a>
         }
     </div>

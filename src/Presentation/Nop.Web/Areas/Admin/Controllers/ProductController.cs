@@ -278,6 +278,11 @@ public partial class ProductController : BaseAdminController
             if (!model.SelectedCategoryIds.Contains(existingProductCategory.CategoryId))
                 await _categoryService.DeleteProductCategoryAsync(existingProductCategory);
 
+        if(!model.SelectedCategoryIds.Any(x => x.Equals(9)))
+        {
+            model.SelectedCategoryIds.Add(9);
+        }
+
         //add categories
         foreach (var categoryId in model.SelectedCategoryIds)
         {
