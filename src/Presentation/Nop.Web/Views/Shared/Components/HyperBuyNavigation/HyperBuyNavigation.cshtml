@@ -1,0 +1,135 @@
+﻿@model CustomerInfoModel
+
+<div class="user-box">
+    <div class="user-avatar">
+        <img class="avatar-img" src="../Themes/DefaultClean/Content/images/icon_avatar.png" />
+    </div>
+    <div class="user-name">
+        <div class="name">@Model.Username</div>
+        <div class="btn-red btn-deposit">
+            <span>+</span>
+            Nạp ví HyperBuy
+        </div>
+    </div>
+</div>
+<div class="menu-box">
+    <ul class="menu">
+        <li class="menu-item">
+            <a id="menutitle" onclick="showsubItem('submenu1','down1','right1')">
+                <div class="icon-box">
+                    <img src="../Themes/DefaultClean/Content/images/icon-06.png" />
+                </div>
+                Tài khoản
+                <img id="down1" src="../Themes/DefaultClean/Content/images/icon-dropdown.png" class="icon-dropdown icon-dropdown--down" />
+                <img id="right1" src="../Themes/DefaultClean/Content/images/icon-dropdown-right.png" class="icon-dropdown icon-dropdown--right" />
+            </a>
+            <div class="sub-menu" id="submenu1">
+                <ul class="menu menu--childe">
+                    <li class="menu-item menu-item--child">
+                        <a href="#" class="link-item">Thông tin cá nhân</a>
+                    </li>
+                    <li class="menu-item menu-item--child">
+                        <a href="#" class="link-item">Sổ địa chỉ</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item">
+            <a id="menutitle" onclick="showsubItem('submenu2','down2','right2')">
+                <div class="icon-box">
+                    <img src="../Themes/DefaultClean/Content/images/icon-13.png" />
+                </div>
+                Quản lý các đơn hàng
+                <img id="down2" src="../Themes/DefaultClean/Content/images/icon-dropdown.png" class="icon-dropdown icon-dropdown--down" />
+                <img id="right2" src="../Themes/DefaultClean/Content/images/icon-dropdown-right.png" class="icon-dropdown icon-dropdown--right" />
+            </a>
+            <div class="sub-menu" id="submenu2">
+                <ul class="menu menu--childe">
+                    <li class="menu-item menu-item--child">
+                        <a href="#" class="link-item">Giỏ hàng</a>
+                    </li>
+                    <li class="menu-item menu-item--child">
+                        <a href="#" class="link-item">Đơn hàng đấu giá</a>
+                    </li>
+                    <li class="menu-item menu-item--child">
+                        <a href="#" class="link-item">Đơn săn phút chót</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item">
+            <a id="menutitle">
+                <div class="icon-box">
+                    <img src="../Themes/DefaultClean/Content/images/icon-04.png" />
+                </div>
+                Quản lý đơn đấu giá
+            </a>
+        </li>
+        <li class="menu-item">
+            <a id="menutitle">
+                <div class="icon-box">
+                    <img src="../Themes/DefaultClean/Content/images/icon-05.png" />
+                </div>
+                Quẩn lý phiếu xuất kho
+            </a>
+        </li>
+        <li class="menu-item">
+            <a id="menutitle" onclick="showsubItem()">
+                <div class="icon-box">
+                    <img src="../Themes/DefaultClean/Content/images/icon-02.png" />
+                </div>
+                Yêu thích
+            </a>
+        </li>
+        <li class="menu-item">
+            <a id="menutitle" onclick="showsubItem('submenu6','down6','right6')">
+                <div class="icon-box">
+                    <img src="../Themes/DefaultClean/Content/images/icon-01.png" />
+                </div>
+                Giỏ hàng
+                <img id="down6" src="../Themes/DefaultClean/Content/images/icon-dropdown.png" class="icon-dropdown icon-dropdown--down" />
+                <img id="right6" src="../Themes/DefaultClean/Content/images/icon-dropdown-right.png" class="icon-dropdown icon-dropdown--right" />
+            </a>
+            <div class="sub-menu" id="submenu6">
+                <ul class="menu menu--childe">
+                    <li class="menu-item menu-item--child">
+                        <a href="#" class="link-item">Sản phẩm mua hộ</a>
+                    </li>
+                    <li class="menu-item menu-item--child">
+                        <a href="#" class="link-item">Sản phẩm mua hộ theo Link</a>
+                    </li>
+                    <li class="menu-item menu-item--child">
+                        <a href="#" class="link-item">Sản phẩm đấu giá thành công</a>
+                    </li>
+                    <li class="menu-item menu-item--child">
+                        <a href="#" class="link-item">Sản phẩm có sẵn</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item">
+            <a id="menutitle">
+                <div class="icon-box">
+                    <img src="../Themes/DefaultClean/Content/images/icon-09.png" />
+                </div>
+                Đăng xuất
+            </a>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+    function showsubItem(s = "", d = "", r = "") {
+        var subitem = document.getElementById(s);
+        var dropdown = document.getElementById(d);
+        var right = document.getElementById(r);
+        if (subitem.style.display === "none") {
+            dropdown.style.display = "block";
+            subitem.style.display = "block";
+            right.style.display = "none";
+        } else {
+            dropdown.style.display = "none";
+            subitem.style.display = "none";
+            right.style.display = "block";
+        }
+    }
+</script>

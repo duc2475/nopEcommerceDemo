@@ -1162,6 +1162,8 @@ public partial class ShoppingCartController : BasePublicController
         return View(model);
     }
 
+
+
     [HttpPost, ActionName("Cart")]
     [FormValueRequired("updatecart")]
     public virtual async Task<IActionResult> UpdateCart(IFormCollection form)

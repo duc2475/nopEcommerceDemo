@@ -1,4 +1,5 @@
-﻿using Nop.Services.Installation;
+﻿using Microsoft.AspNetCore.Mvc;
+using Nop.Services.Installation;
 using Nop.Web.Framework.Mvc.Routing;
 
 namespace Nop.Web.Infrastructure;
@@ -49,6 +50,12 @@ public partial class RouteProvider : BaseRouteProvider, IRouteProvider
         endpointRouteBuilder.MapControllerRoute(name: "Logout",
             pattern: $"{lang}/logout/",
             defaults: new { controller = "Customer", action = "Logout" });
+
+        //hyperbuy custom zone
+
+        endpointRouteBuilder.MapControllerRoute(name: "CustomManager",
+            pattern: $"{lang}/customer-zone",
+            defaults: new { controller = "HyperBuyClientManager", action = "CustomerManager" });
 
         //shopping cart
         endpointRouteBuilder.MapControllerRoute(name: "ShoppingCart",

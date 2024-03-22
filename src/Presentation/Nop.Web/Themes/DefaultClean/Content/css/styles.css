@@ -9517,3 +9517,123 @@ hyper-buy-header .header-top .right .national-flag img{
   font-weight: 500;
   color: red;
 }
+
+.user-box {
+  border-bottom: 1px solid #757575;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.user-box .user-avatar {
+    margin-right: 20px;
+    background: #e8e8e8;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-box .user-avatar .avatar-img{
+    width: 60%;
+}
+
+.user-box .user-name .name {
+  font-size: 24px;
+  color: #515151;
+  font-weight: bold;
+  font-family: "Kanit";
+  letter-spacing: 1px;
+}
+.user-box .user-name .btn-deposit {
+  padding: 0 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  line-height: 25px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+* .btn-red {
+  border: 1px solid #af272e;
+  color: #fff;
+  background: #af272e;
+  padding: 4px 40px;
+  font-family: "Kanit";
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-radius: 25px;
+}
+
+.menu-box .menu {
+    list-style: none;
+}
+.menu-box .menu .menu-item {
+  width: 100%;
+  cursor: pointer;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+.menu-box .menu .menu-item a {
+    padding: 5px 15px;
+    width: 100%;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    color: #757575;
+    border-radius: 6px;
+    position: relative;
+    font-weight:500;
+}
+
+.menu-box .menu .menu-item a:hover {
+    padding: 5px 15px;
+    width: 100%;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    color: #af272e;
+    border-radius: 6px;
+    position: relative;
+    text-decoration: none;
+    font-weight:500;
+}
+.menu-box .menu .menu-item .icon-box {
+  height: 24px;
+  width: 30px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-box .menu .menu-item .icon-box img {
+  height: 100%;
+}
+
+.menu-box .menu .menu-item .icon-dropdown--down {
+  display: none;
+  height: 7px;
+  width: auto;
+}
+
+.menu-box .menu .menu-item .icon-dropdown {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 13px;
+}
+
+.menu-box .menu .menu-item .icon-dropdown--right {
+  display: block;
+  height: 12px;
+  width: auto;
+}
+
+.menu-box .menu .menu-item .sub-menu{
+    display: none;
+    padding-left: 40px;
+    font-size: 0.9rem !important;
+}
