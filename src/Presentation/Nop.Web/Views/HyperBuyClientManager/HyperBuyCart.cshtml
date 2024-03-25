@@ -1,7 +1,47 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Nop.Web.Models.HyperBuyClientManager
+
+@model HyperCustomerZone
 @{
     Layout = "CustomerManager";
 }
-<h1>Xin chao</H1>
+<div class="d-flex">
+    <div class="cart-content">
+        <div class="head-content">
+            <div class="title">Giỏ hàng</div>
+        </div>
+        <div class="tabs">
+            <div class="tab">Sản phẩm mua hộ</div>
+            <div class="tab">Sản phẩm mua hộ theo link</div>
+            <div class="tab">Sản phẩm đấu giá thành công</div>
+            <div class="tab active">Sản phẩm có sẵn</div>
+        </div>
+        <div class="tab-content">
+            <div class="mini-tab-content">
+                <div class="product-tabs">
+                    <div class="mini-tabs-and-remove">
+                        <div class="remove-all">
+                            <input type="checkbox" id="input-select-all"/>
+                            Chọn tất cả
+                            <span class="pl-1">|</span>
+                            <img class="pl-1" id="btn-remove-all-product" src="../Themes/DefaultClean/Content/images/icon_trash.png" />
+                        </div>
+                    </div>
+                    <div class="products">
+                        @if (!Model.ShoppingCart.OnePageCheckoutEnabled)
+                        {
+                            @await Component.InvokeAsync(typeof(CheckoutProgressViewComponent), new { step = CheckoutProgressStep.Cart })
+                        }
+                        @await Component.InvokeAsync(typeof(OrderSummaryViewComponent), new { overriddenModel = Model.ShoppingCart })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bill-wrap">
+        <div class="background-gray ml-3 mr-3" style="margin-top: 42px; border-radius: 10px">
+            <div class="pt-5 p-2 pb-4">
+                @await Component.InvokeAsync(typeof(HyperOderOverViewBillViewComponent), new { isEditable = Model.ShoppingCart.IsEditable, Model.ShoppingCart.DiscountBox })
+            </div>
+        </div>
+    </div>
+</div>

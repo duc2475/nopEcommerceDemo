@@ -2,16 +2,16 @@
 @if (Model.Display)
 {
     <div class="coupon-box">
-        <div class="title">
+        @* <div class="title">
             <strong>@T("ShoppingCart.DiscountCouponCode")</strong>
         </div>
         <div class="hint">
             @T("ShoppingCart.DiscountCouponCode.Tooltip")
-        </div>
+        </div> *@
         <div class="coupon-code">
-            <input name="discountcouponcode" id="discountcouponcode" type="text" class="discount-coupon-code" aria-label="@T("ShoppingCart.DiscountCouponCode.Label")" />
+            <input name="discountcouponcode" id="discountcouponcode" type="text" class="discount-coupon-code" placeholder="Chọn hoặc nhập mã giảm giá" aria-label="@T("ShoppingCart.DiscountCouponCode.Label")" />
 
-            <button type="submit" name="applydiscountcouponcode" id="applydiscountcouponcode" class="button-2 apply-discount-coupon-code-button">@T("ShoppingCart.DiscountCouponCode.Button")</button>
+            <button type="submit" name="applydiscountcouponcode" id="applydiscountcouponcode" class="button-2 apply-discount-coupon-code-button">Mã giảm giá</button>
         </div>
         @foreach (var message in Model.Messages)
         {

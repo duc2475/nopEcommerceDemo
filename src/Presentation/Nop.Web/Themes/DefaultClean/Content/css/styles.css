@@ -448,7 +448,6 @@ label, label + * {
   min-width: 0;
 }
 
-.cart td,
 .data-table td,
 .forum-table td {
   min-width: 50px;
@@ -9636,4 +9635,190 @@ hyper-buy-header .header-top .right .national-flag img{
     display: none;
     padding-left: 40px;
     font-size: 0.9rem !important;
+}
+
+.cart-content{
+    width: 70%;
+}
+
+.head-content {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.head-content .title {
+  font-size: 1.8rem;
+
+  color: #af272e;
+  font-weight: 700;  
+  text-align: left !important;
+  padding-left: 15px;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 0 20px;
+}
+
+.tabs .tab {
+    padding: 10px 0;
+    font-size: 1em;
+    color: #b9b9b9;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.tabs .tab.active {
+    cursor: default;
+    font-weight: 700;
+    color: #af272e;
+    border-bottom: 3px solid #af272e;
+}
+
+.tab-content {
+  padding: 10px 0 60px 20px;
+}
+
+.tab-content .mini-tab-content {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+.tab-content .mini-tab-content .product-tabs {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.tab-content .mini-tab-content .product-tabs .mini-tabs-and-remove {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+}
+
+.tab-content .mini-tab-content .product-tabs .mini-tabs-and-remove .remove-all {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  border-radius: 16px 0 0 0;
+  font-size: 1em;
+  color: #b9b9b9;
+  font-weight: 500;
+}
+
+.tab-content .mini-tab-content .product-tabs .mini-tabs-and-remove .remove-all input {
+  margin-right: 6px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  accent-color: #af272e;
+}
+
+.bill-wrap{
+    width: 30%;
+    margin-bottom: 50px;
+}
+.bill-wrap .bill {
+  width: 100%;
+  color: #757575;
+}
+.bill-wrap .bill .bill-detail,.bill-wrap .bill .bill-total {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  border-bottom: 1px solid #fff;
+}
+
+.bill-wrap .bill .bill-detail span, .bill-wrap .bill .bill-total span{
+    font-weight:500;
+}
+
+.bill-wrap .bill .bill-detail .left, .bill-wrap .bill .bill-total .left {
+  font-size: 16px;
+  color: #757575;
+  width: 130px;
+  font-weight: 500;
+}
+
+.bill-wrap .bill .bill-detail .right, .bill-wrap .bill .bill-total .right {
+  flex-grow: 1;
+  width: calc(100% - 130px);
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+.bill-wrap .bill .submit-box {
+  font-size: 12px;
+}
+.bill-wrap .bill .submit-box .input-agree-terms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.bill-wrap .bill .submit-box .input-agree-terms input {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  accent-color: #af272e;
+}
+.bill-wrap .bill .submit-box .btn-submit {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.bill-wrap .bill .submit-box .btn-submit .btn-payment {
+  width: 100%;
+  font-size: 16px;
+}
+
+.bill-wrap .bill .submit-box .note {
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-wrap .bill .bill-total .note span {
+   font-style: italic !important;
+   font-weight: 400;
+}
+
+.bill-wrap .bill .bill-detail .input-discount-code, .bill-wrap .bill .bill-total .input-discount-code {
+  display: flex;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-left: 13px;
+}
+.bill-wrap .bill .bill-detail .input-discount-code input,.bill-wrap .bill .bill-total .input-discount-code input {
+  width: 180px;
+  padding: 10px;
+  border-radius: 4px 0 0 4px;
+  border: 0;
+  font-size: 12px;
+  outline: none;
+  
+}
+
+.bill-wrap .bill .bill-detail .input-discount-code .btn-submit-discount-code,.bill-wrap .bill .bill-total .input-discount-code .btn-submit-discount-code {
+  border-radius: 0 4px 4px 0;
+  font-size: 12px;
+  padding: 2px 10px;
+  flex-grow: 1;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.cart td{
+    border-width: 0px;
 }

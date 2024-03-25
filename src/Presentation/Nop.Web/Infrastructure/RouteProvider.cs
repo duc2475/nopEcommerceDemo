@@ -52,10 +52,10 @@ public partial class RouteProvider : BaseRouteProvider, IRouteProvider
             defaults: new { controller = "Customer", action = "Logout" });
 
         //hyperbuy custom zone
-
+        
         endpointRouteBuilder.MapControllerRoute(name: "CustomManager",
-            pattern: $"{lang}/customer-zone",
-            defaults: new { controller = "HyperBuyClientManager", action = "CustomerManager" });
+           pattern: $"{lang}/customer-zone/cart",
+           defaults: new { controller = "HyperBuyClientManager", action = "HyperBuyCart" });
 
         //shopping cart
         endpointRouteBuilder.MapControllerRoute(name: "ShoppingCart",

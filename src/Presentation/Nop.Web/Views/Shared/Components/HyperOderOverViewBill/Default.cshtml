@@ -1,0 +1,100 @@
+﻿@model OrderTotalsModel
+
+@{
+    ShoppingCartModel.DiscountBoxModel discountBox = ViewBag.DiscountModel;
+}
+
+<div class="bill">
+    <div class="bill-detail">
+        <div class="left">Tiền hàng</div>
+        <div class="right">
+            <div class="amount">
+                @if (Model.SubTotal == null)
+                {
+                    <span>0 đ</span>
+                }
+                else{
+                    <span>@Model.SubTotal</span>
+                }
+                
+            </div>
+        </div>
+        @if (!string.IsNullOrEmpty(Model.SubTotalDiscount))
+        {
+            <div class="left">Tiền giảm giá</div>
+            <div class="right">
+                <div class="amount">
+                    <span>@Model.SubTotalDiscount</span> đ
+                </div>
+            </div>
+        }
+        <div class="left">Phí thanh toán</div>
+        <div class="right">
+            <div class="amount">
+                @{
+                    if (!string.IsNullOrEmpty(Model.PaymentMethodAdditionalFee))
+                    {
+                        <span>@Model.PaymentMethodAdditionalFee</span>
+                    }
+                    else
+                    {
+                        <span>0</span>
+                    }
+                } đ
+            </div>
+        </div>
+        <div class="left">Phí mua hộ</div>
+        <div class="right">
+            <div class="amount">
+                @{
+                    if (Model.DisplayTax)
+                    {
+                        <span>@Model.Tax</span>
+                    }
+                    else
+                    {
+                        <span>0</span>
+                    }
+                }
+            </div>
+        </div>
+        <div class="input-discount-code">
+            <input type="text" placeholder="Chọn hoặc nhập mã"/>
+            <div class="btn-submit-discount-code btn-red">Mã giảm giá</div>
+        </div>
+    </div>
+    <div class="bill-total">
+        <div class="left pt-1"><strong>Tổng thanh toán</strong></div>
+        <div class="right">
+            <div class="amount">
+                @if (!string.IsNullOrEmpty(Model.SubTotalDiscount))
+                {
+                    <span class="value-summary"><strong>@{(Convert.ToInt32(Model.SubTotal) - Convert.ToInt32(Model.SubTotalDiscount)).ToString();}</strong></span>
+                }
+                else
+                {
+                    <span>@Model.SubTotal</span>
+                }
+            </div>
+        </div>
+        <div class="note">
+            <span>
+                * Bảng phí chưa bao gồm cước vận chuyển của website, cước vận chuyển từ Nhật về Việt Nam và cước vận chuyển nội địa Việt Nam
+            </span>
+        </div>
+    </div>
+    <div class="submit-box">
+        <div class="input-agree-terms">
+            <input type="checkbox"/>
+             Đồng ý với điều của HyperBuy
+        </div>
+        <div class="btn-submit">
+            <button class="btn-red btn-payment">Thanh toán ngay</button>
+        </div>
+        <div class="note">
+            <span>
+                * Quý khách nên thanh toán ngay tránh sản phẩm bị tăng giá do chênh lệch tỉ giá hoặc website thay đổi giá bán.
+            </span>
+        </div>
+    </div>
+</div>
