@@ -548,25 +548,51 @@ label, label + * {
   white-space: nowrap;
 }
 
-.cart td.quantity input {
-  width: 50px;
-  text-align: center;
+.cart .quantity {
+    padding-left: 3%;
+    padding-top: 5%;
 }
 
-.cart .product-quantity div.up {
-  background: url('../images/vote-up.png') no-repeat 50% 50%;
-  width: 50px;
+.cart td .cart-item .quantity input {
+  width: 30px;
+  text-align: center;
+  border-top: none;
+  border-bottom: none;
   height: 25px;
+}
+
+.cart td .cart-item .quantity input:focus {
+  width: 30px;
+  text-align: center;
+  outline: none;
+}
+.cart .product-quantity div.up {
+  background: url('../images/plus.png') no-repeat 50% 50%;
+  width: 10px;
+  height: 10px;
   border: 0;
   cursor: pointer;
+  margin-top: 8px;
+  margin-left: 10px;
+
 }
 
 .cart .product-quantity div.down {
-  background: url('../images/vote-down.png') no-repeat 50% 50%;
-  width: 50px;
-  height: 25px;
+  background: url('../images/minus-sign.png') no-repeat 50% 50%;
+  width: 10px;
+  height: 10px;
   border: 0;
   cursor: pointer;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+
+.cart .product-quantity {
+  display: flex;
+  border: 1px solid #af272e;
+  justify-content: center;
+  border-radius: 20px;
+  width: 90px;
 }
 
 .cart td.subtotal,
@@ -9821,4 +9847,107 @@ hyper-buy-header .header-top .right .national-flag img{
 
 .cart td{
     border-width: 0px;
+    padding-left:10px;
+}
+
+.cart .checked-product {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  border-radius: 4px;
+  accent-color: #af272e;
+}
+
+.table-wrapper .product-brand {
+  padding-left: 0px;
+  color: #757575;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.table-wrapper .product-brand .brand{
+    display: flex;
+    justify-content: left;
+    border-bottom: 1px solid #B9B9B9;
+    padding-bottom: 10px;
+}
+
+.table-wrapper .product-brand .brand .product-brand-picture img {
+    width: 20px;
+    height:20px;
+    margin-right: 10px;
+}
+
+.cart .cart-item .product-picture {
+  width: 90px;
+  height: 90px;
+}
+.cart .cart-item .product-picture img {
+  width: 90px;
+  height: 90px;
+}
+
+.cart .cart-item .product {
+  width: 48%;
+  margin-left: 20px
+}
+
+.cart .cart-item .product .product-attributes {
+  font-family: "Kanit";
+  font-size: 16px;
+  font-weight: 400;
+  color: #757575
+}
+
+.cart .cart-item .product a {
+  display: flex;
+  justify-content: start;
+  font-size:16px;
+  font-weight:900;
+  font-family: "Kanit";
+}
+
+.cart .cart-item .unit-price {
+    display: flex;
+    justify-content: space-around;
+    color: #757575;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Kanit";
+}
+
+.cart .cart-item .unit-price .product-unit-price{
+    padding-top:55%;
+    padding-left: 20px;
+}
+
+.cart .cart-item .subtotal{
+    padding-left: 20px;
+    width: 80px;
+}
+
+.cart .cart-item .subtotal .action-price .action-icon {
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.cart  .cart-item .subtotal .action-price .action-icon img {
+  padding: 5px;
+}
+
+.cart .cart-item .subtotal .action-price .subtotal-price {
+  font-family: "Kanit";
+  font-size: 16px;
+  font-weight: 400;
+  color: #af272e;
+  display: flex;
+  justify-content: center;
+}
+
+.table-wrapper .cart .cart-line .cart-item {
+  display: flex;
+  justify-content: left;
+  padding-top: 8px;
+  padding-bottom: 10px;
 }
